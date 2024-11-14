@@ -80,6 +80,8 @@ AddrSpace::AddrSpace()
 
 AddrSpace::~AddrSpace()
 {
+    for(int i = 0; i < numPages; i++)
+        AddrSpace::usedPhyPage[pageTable[i].physicalPage] = false;
    delete pageTable;
 }
 
@@ -116,14 +118,13 @@ AddrSpace::Load(char *fileName)
 			+ UserStackSize;	// we need to increase the size
 						// to leave room for the stack
     numPages = divRoundUp(size, PageSize);
-	cout << "number of pages of " << fileName<< " is "<<numPages<<endl;
+	// cout << "number of pages of " << fileName<< " is "<<numPages<<endl;
     // size = numPages * PageSize;
 
     // numPages = divRoundUp(size,PageSize);
     pageTable = new TranslationEntry[numPages];
     for(unsigned int i = 0, j = 0; i < numPages; i++) {
         pageTable[i].virtualPage = i;
-        pageTable[i].physicalPage = i;
         pageTable[i].valid = true;
         pageTable[i].use = false;
         pageTable[i].dirty = false;
@@ -144,13 +145,11 @@ AddrSpace::Load(char *fileName)
 		for(unsigned int j=0,i=0;i < numPages ;i++) {
 			j=0;
         
-			while(kernel->machine->usedPhyPage[j] != false && j < NumPhysPages){ j++; }
+			while(AddrSpace::usedPhyPage[j] != false && j < NumPhysPages){ j++; }
                  
 			
 			if(j < NumPhysPages) {   
-				kernel->machine->usedPhyPage[j] = true;
-				kernel->machine->PhyPageName[j] = ID;
-				kernel->machine->main_tab[j] = &pageTable[i];
+				AddrSpace::usedPhyPage[j]=true;
 				pageTable[i].physicalPage = j;
 				pageTable[i].valid = true;
 				pageTable[i].use = false;
@@ -160,14 +159,13 @@ AddrSpace::Load(char *fileName)
 				executable->ReadAt( &(kernel->machine->mainMemory[j * PageSize]), PageSize,
 					noffH.code.inFileAddr + (i*PageSize));
 			}
-            
 			else { 
 				char *data;
 				data = new char[PageSize];
 				j = 0;
-				while(kernel->machine->usedvirPage[j] != false){ j++; }
+				while(AddrSpace::usedVirPage[j]!= false){ j++; }
 				
-				kernel->machine->usedvirPage[j]=true;
+				AddrSpace::usedVirPage[j]=true;
 				pageTable[i].virtualPage = j;      
 				pageTable[i].valid = false;         
 				pageTable[i].use = false;
