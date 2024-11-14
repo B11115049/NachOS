@@ -101,12 +101,15 @@ AddrSpace::Load(char *fileName)
 	cerr << "Unable to open file " << fileName << "\n";
 	return FALSE;
     }
+
+    // 確保header 有效
     executable->ReadAt((char *)&noffH, sizeof(noffH), 0);
     if ((noffH.noffMagic != NOFFMAGIC) && 
 		(WordToHost(noffH.noffMagic) == NOFFMAGIC))
     	SwapHeader(&noffH);
     ASSERT(noffH.noffMagic == NOFFMAGIC);
 
+// 計算process page number 確保physpage 足夠
 // how big is address space?
     size = noffH.code.size + noffH.initData.size + noffH.uninitData.size 
 			+ UserStackSize;	// we need to increase the size

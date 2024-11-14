@@ -207,26 +207,27 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
     offset = (unsigned) virtAddr % PageSize;
     
     if (tlb == NULL) {		// => page table => vpn is index into table
-	if (vpn >= pageTableSize) {
-	    DEBUG(dbgAddr, "Illegal virtual page # " << virtAddr);
-	    return AddressErrorException;
-	} else if (!pageTable[vpn].valid) {
-	    DEBUG(dbgAddr, "Invalid virtual page # " << virtAddr);
-	    return PageFaultException;
-	}
-	entry = &pageTable[vpn];
+		if (vpn >= pageTableSize) {
+			DEBUG(dbgAddr, "Illegal virtual page # " << virtAddr);
+			return AddressErrorException;
+		} else if (!pageTable[vpn].valid) {
+			DEBUG(dbgAddr, "Invalid virtual page # " << virtAddr);
+			cout << "page fault\n";
+			kernel->stats->numPageFaults++;
+		}
+		entry = getEntryWithReplacement(vpn);
     } else {
         for (entry = NULL, i = 0; i < TLBSize; i++)
-    	    if (tlb[i].valid && (tlb[i].virtualPage == vpn)) {
-		entry = &tlb[i];			// FOUND!
-		break;
-	    }
-	if (entry == NULL) {				// not found
-    	    DEBUG(dbgAddr, "Invalid TLB entry for this virtual page!");
-    	    return PageFaultException;		// really, this is a TLB fault,
-						// the page may be in memory,
-						// but not in the TLB
-	}
+    	    if (tlb[i]->valid && (tlb[i]->virtualPage == vpn)) {
+				entry = tlb[i];			// FOUND!
+				break;
+			}
+		if (entry == NULL) {				// not found
+			DEBUG(dbgAddr, "Invalid TLB entry for this virtual page!");
+			cout << "TLB page fault\n";
+			kernel->stats->numPageFaults++;
+			entry = getEntryWithReplacement(vpn);
+		}
     }
 
     if (entry->readOnly && writing) {	// trying to write to a read-only page
@@ -248,4 +249,52 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
     ASSERT((*physAddr >= 0) && ((*physAddr + size) <= MemorySize));
     DEBUG(dbgAddr, "phys addr = " << *physAddr);
     return NoException;
+}
+
+
+int Machine::getReplaceEntry() {
+	int j = entryIndex;
+	do{
+		if(validPageTable[j] == nullptr){
+			entryIndex = (j + 1) % NumPhysPages;
+			return j;
+		}
+	}while(j = (j + 1) % NumPhysPages, j != entryIndex);
+	
+	if (replacementType == FIFO) {
+		return entryIndex = (entryIndex + 1) % NumPhysPages;
+	} else if (replacementType == LRU) {
+		for(; validPageTable[j]->use; validPageTable[j]->use = false, j = (j + 1) % NumPhysPages);
+		entryIndex = (j + 1) % NumPhysPages;
+		return j;
+	}
+	
+}
+
+TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
+	int replaceIndex = getReplaceEntry();
+	char buf1[PageSize] = {0};
+	if(validPageTable[replaceIndex] == nullptr) {
+		kernel->vmDisk->ReadSector(pageTable[vpn].physicalPage, buf1);
+		bcopy(buf1, &mainMemory[replaceIndex * PageSize], PageSize);
+		pageTable[vpn].physicalPage = replaceIndex;
+	} else {
+		char buf2[PageSize] = {0};
+		bcopy(&mainMemory[replaceIndex * PageSize], buf1, PageSize);
+		kernel->vmDisk->ReadSector(pageTable[vpn].physicalPage, buf2);
+		bcopy(buf2, &mainMemory[validPageTable[replaceIndex]->physicalPage * PageSize], PageSize);
+		kernel->vmDisk->WriteSector(pageTable[vpn].physicalPage, buf1);
+		swap(pageTable[vpn].physicalPage, validPageTable[replaceIndex]->physicalPage);
+	}
+
+	if(tlb != nullptr){
+		for(int i = 0; i < TLBSize; i++){
+			if(tlb[i] == validPageTable[replaceIndex]){
+				tlb[i] = &pageTable[vpn];
+				break;
+			}
+		}
+	}
+	validPageTable[replaceIndex] = &pageTable[vpn];
+	return &pageTable[vpn];
 }

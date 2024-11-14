@@ -34,6 +34,11 @@ const unsigned int NumPhysPages = 32;
 const int MemorySize = (NumPhysPages * PageSize);
 const int TLBSize = 4;			// if there is a TLB, make it small
 
+enum ReplacementType {
+	FIFO,
+	LRU
+};
+
 enum ExceptionType { NoException,           // Everything ok!
 		     SyscallException,      // A program executed a system call.
 		     PageFaultException,    // No valid translation found
@@ -126,11 +131,15 @@ class Machine {
 // Thus the TLB pointer should be considered as *read-only*, although 
 // the contents of the TLB are free to be modified by the kernel software.
 
-    TranslationEntry *tlb;		// this pointer should be considered 
+    TranslationEntry **tlb;		// this pointer should be considered 
 					// "read-only" to Nachos kernel code
 
     TranslationEntry *pageTable;
+	TranslationEntry *validPageTable[NumPhysPages] = {0};
     unsigned int pageTableSize;
+	
+	ReplacementType replacementType = FIFO;
+
     bool ReadMem(int addr, int size, int* value);
   private:
 
@@ -161,6 +170,9 @@ class Machine {
     void Debugger();		// invoke the user program debugger
     void DumpState();		// print the user CPU and memory state 
 
+	int getReplaceEntry();
+	TranslationEntry* getEntryWithReplacement(unsigned int vpn);
+
 
 // Internal data structures
 
@@ -170,6 +182,8 @@ class Machine {
 				// simulated instruction
     int runUntilTime;		// drop back into the debugger when simulated
 				// time reaches this value
+
+	int entryIndex = 0;
 
  friend class Interrupt;		// calls DelayedLoad()    
 };
