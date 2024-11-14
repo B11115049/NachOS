@@ -125,6 +125,7 @@ AddrSpace::Load(char *fileName)
     pageTable = new TranslationEntry[numPages];
     for(unsigned int i = 0, j = 0; i < numPages; i++) {
         pageTable[i].virtualPage = i;
+        pageTable[i].physicalPage = i;
         pageTable[i].valid = true;
         pageTable[i].use = false;
         pageTable[i].dirty = false;
