@@ -123,7 +123,7 @@ AddrSpace::Load(char *fileName)
 
     // numPages = divRoundUp(size,PageSize);
     pageTable = new TranslationEntry[numPages];
-    for(unsigned int i = 0, j = 0; i < numPages; i++) {
+    for(unsigned int i = 0; i < numPages; i++) {
         pageTable[i].virtualPage = i;
         pageTable[i].physicalPage = i;
         pageTable[i].valid = true;
@@ -159,6 +159,7 @@ AddrSpace::Load(char *fileName)
 				
 				executable->ReadAt( &(kernel->machine->mainMemory[j * PageSize]), PageSize,
 					noffH.code.inFileAddr + (i*PageSize));
+                kernal->machine->validPageTable[i] = &pagetable[j]
 			}
 			else { 
 				char *data;
@@ -173,9 +174,10 @@ AddrSpace::Load(char *fileName)
 				pageTable[i].dirty = false;
 				pageTable[i].readOnly = false;
 				executable->ReadAt(data, PageSize, noffH.code.inFileAddr + (i * PageSize));
-				kernel->virtualMemoryDisk->WriteSector(j, data);     
+				kernel->vmDisk->WriteSector(j, data);     
 			}
 		}
+    }
 	if (noffH.initData.size > 0) {
         DEBUG(dbgAddr, "Initializing data segment.");
 	DEBUG(dbgAddr, noffH.initData.virtualAddr << ", " << noffH.initData.size);
@@ -186,7 +188,7 @@ AddrSpace::Load(char *fileName)
 
     delete executable;			// close file
     return TRUE;			// success
-}
+
 }
 
 //----------------------------------------------------------------------
