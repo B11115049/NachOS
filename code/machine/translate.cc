@@ -213,11 +213,12 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
 	} else if (!pageTable[vpn].valid) {
         cout << "page fault\n";
 		kernel->stats->numPageFaults++;
+		entry = getEntryWithReplacement(vpn);
 	}
-	entry = getEntryWithReplacement(vpn);
+	entry = &pageTable[vpn];
     } else {
         for (entry = NULL, i = 0; i < TLBSize; i++)
-    	    if (tlb[i]->valid && (tlb[i]->virtualPage == vpn)) {
+    	    if (tlb[i]->valid && (tlb[i] == &pageTable[vpn])) {
 				entry = tlb[i];			// FOUND!
 				break;
 			}
@@ -234,7 +235,7 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
 	return ReadOnlyException;
     }
     pageFrame = entry->physicalPage;
-
+	
     // if the pageFrame is too big, there is something really wrong! 
     // An invalid translation was loaded into the page table or TLB. 
     if (pageFrame >= NumPhysPages) { 
@@ -261,7 +262,8 @@ int Machine::getReplaceEntry() {
 	}while(j = (j + 1) % NumPhysPages, j != entryIndex);
 	
 	if (replacementType == fifo) {
-		return entryIndex = (entryIndex + 1) % NumPhysPages;
+		entryIndex = (entryIndex + 1) % NumPhysPages;
+		return j;
 	} else if (replacementType == LRU) {
 		for(; validPageTable[j]->use; validPageTable[j]->use = false, j = (j + 1) % NumPhysPages);
 		entryIndex = (j + 1) % NumPhysPages;
@@ -272,6 +274,7 @@ int Machine::getReplaceEntry() {
 
 TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
 	int replaceIndex = getReplaceEntry();
+	cout<< "page "<<replaceIndex<<" swapped"<<endl;
 	char buf1[PageSize] = {0};
 	if(validPageTable[replaceIndex] == nullptr) {
 		kernel->vmDisk->ReadSector(pageTable[vpn].physicalPage, buf1);
@@ -283,9 +286,13 @@ TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
 		kernel->vmDisk->ReadSector(pageTable[vpn].physicalPage, buf2);
 		bcopy(buf2, &mainMemory[validPageTable[replaceIndex]->physicalPage * PageSize], PageSize);
 		kernel->vmDisk->WriteSector(pageTable[vpn].physicalPage, buf1);
+		// cout<<pageTable[vpn].physicalPage<<" "<<validPageTable[replaceIndex]->physicalPage<<endl;
 		swap(pageTable[vpn].physicalPage, validPageTable[replaceIndex]->physicalPage);
+		// cout<<pageTable[vpn].physicalPage<<" "<<validPageTable[replaceIndex]->physicalPage<<endl;
+		// validPageTable[replaceIndex]->valid = false;
 	}
 
+	// replace entry be choose by replaceIndex in tlb
 	if(tlb != nullptr){
 		for(int i = 0; i < TLBSize; i++){
 			if(tlb[i] == validPageTable[replaceIndex]){
@@ -295,5 +302,6 @@ TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
 		}
 	}
 	validPageTable[replaceIndex] = &pageTable[vpn];
+	// pageTable[vpn].valid = true;
 	return &pageTable[vpn];
 }
