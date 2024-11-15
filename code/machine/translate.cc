@@ -213,11 +213,12 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
 	} else if (!pageTable[vpn].valid) {
         cout << "page fault\n";
 		kernel->stats->numPageFaults++;
+		entry = getEntryWithReplacement(vpn);
 	}
-	entry = getEntryWithReplacement(vpn);
+	entry = &pageTable[vpn];
     } else {
         for (entry = NULL, i = 0; i < TLBSize; i++)
-    	    if (tlb[i]->valid && (tlb[i]->virtualPage == vpn)) {
+    	    if (tlb[i]->valid && (tlb[i] == &pageTable[vpn])) {
 				entry = tlb[i];			// FOUND!
 				break;
 			}
@@ -286,6 +287,7 @@ TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
 		swap(pageTable[vpn].physicalPage, validPageTable[replaceIndex]->physicalPage);
 	}
 
+	// replace entry be choose by replaceIndex in tlb
 	if(tlb != nullptr){
 		for(int i = 0; i < TLBSize; i++){
 			if(tlb[i] == validPageTable[replaceIndex]){
