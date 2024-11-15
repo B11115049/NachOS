@@ -159,7 +159,7 @@ AddrSpace::Load(char *fileName)
 				
 				executable->ReadAt( &(kernel->machine->mainMemory[j * PageSize]), PageSize,
 					noffH.code.inFileAddr + (i*PageSize));
-                kernal->machine->validPageTable[i] = &pagetable[j]
+                kernel->machine->validPageTable[j] = &pageTable[i]
 			}
 			else { 
 				char *data;
