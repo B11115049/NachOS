@@ -137,6 +137,7 @@ class Machine {
     TranslationEntry *pageTable;
 	TranslationEntry *validPageTable[NumPhysPages] = {0};
     unsigned int pageTableSize;	
+	bool usedPhyPage[NumPhysPages] = {0};
 
 	ReplacementType replacementType = fifo;
 

@@ -30,6 +30,7 @@
 
 
 bool AddrSpace::usedPhyPage[NumPhysPages] = {0};
+bool AddrSpace::usedVirPage[NumPhysPages] = {0};
 
 static void 
 SwapHeader (NoffHeader *noffH)
@@ -118,7 +119,7 @@ AddrSpace::Load(char *fileName)
 			+ UserStackSize;	// we need to increase the size
 						// to leave room for the stack
     numPages = divRoundUp(size, PageSize);
-	// cout << "number of pages of " << fileName<< " is "<<numPages<<endl;
+	cout << "number of pages of " << fileName<< " is "<<numPages<<endl;
     // size = numPages * PageSize;
 
     // numPages = divRoundUp(size,PageSize);
@@ -146,11 +147,11 @@ AddrSpace::Load(char *fileName)
 		for(unsigned int j=0,i=0;i < numPages ;i++) {
 			j=0;
         
-			while(AddrSpace::usedPhyPage[j] != false && j < NumPhysPages){ j++; }
+			while(kernel->machine->usedPhyPage[j] != false && j < NumPhysPages){ j++; }
                  
 			
 			if(j < NumPhysPages) {   
-				AddrSpace::usedPhyPage[j]=true;
+				kernel->machine->usedPhyPage[j]=true;
 				pageTable[i].physicalPage = j;
 				pageTable[i].valid = true;
 				pageTable[i].use = false;
@@ -159,8 +160,9 @@ AddrSpace::Load(char *fileName)
 				
 				executable->ReadAt( &(kernel->machine->mainMemory[j * PageSize]), PageSize,
 					noffH.code.inFileAddr + (i*PageSize));
-                kernal->machine->validPageTable[i] = &pagetable[j]
-			}
+                kernel->machine->validPageTable[j] = &pageTable[i];
+                // cout<<j<<"th PhyPage valid bit = "<<pageTable[i].valid<<endl;
+			} 
 			else { 
 				char *data;
 				data = new char[PageSize];
@@ -174,8 +176,11 @@ AddrSpace::Load(char *fileName)
 				pageTable[i].dirty = false;
 				pageTable[i].readOnly = false;
 				executable->ReadAt(data, PageSize, noffH.code.inFileAddr + (i * PageSize));
-				kernel->vmDisk->WriteSector(j, data);     
+                cout<<pageTable[i].physicalPage<<" "<<pageTable[i].virtualPage<<"th VirPage valid bit = "<<pageTable[i].valid<<endl;  
+				kernel->vmDisk->WriteSector(j, data);   
+                cout<<pageTable[i].physicalPage<<" "<<pageTable[i].virtualPage<<"th VirPage valid bit = "<<pageTable[i].valid<<endl;  
 			}
+
 		}
     }
 	if (noffH.initData.size > 0) {
