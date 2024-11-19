@@ -35,10 +35,6 @@ const unsigned int NumVirPages = NumPhysPages * 10;
 const int MemorySize = (NumPhysPages * PageSize);
 const int TLBSize = 4;			// if there is a TLB, make it small
 
-enum ReplacementType {
-	fifo,
-	LRU
-};
 
 enum ExceptionType { NoException,           // Everything ok!
 		     SyscallException,      // A program executed a system call.
@@ -142,8 +138,6 @@ class Machine {
 
 
 	bool useVirPage[NumVirPages] = {0};
-
-	ReplacementType replacementType = fifo;
 
     bool ReadMem(int addr, int size, int* value);
   private:

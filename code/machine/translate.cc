@@ -261,10 +261,10 @@ int Machine::getReplaceEntry() {
 		}
 	}while(j = (j + 1) % NumPhysPages, j != entryIndex);
 	
-	if (replacementType == fifo) {
+	if (kernel->replacementType == fifo) {
 		entryIndex = (entryIndex + 1) % NumPhysPages;
 		return j;
-	} else if (replacementType == LRU) {
+	} else if (kernel->replacementType == LRU) {
 		for(; validPageTable[j]->use; validPageTable[j]->use = false, j = (j + 1) % NumPhysPages);
 		entryIndex = (j + 1) % NumPhysPages;
 		return j;
