@@ -16,22 +16,23 @@
 #include "copyright.h"
 #include "filesys.h"
 #include <string.h>
+#include <mutex>
+#include "noff.h"
 
 #define UserStackSize		1024 	// increase this as necessary!
 
 class AddrSpace {
   public:
-    AddrSpace();			// Create an address space.
+    AddrSpace(int id);			// Create an address space.
     ~AddrSpace();			// De-allocate an address space
-
-    static bool usedPhyPage[NumPhysPages];
-    static bool usedVirPage[NumPhysPages];
 
     void Execute(char *fileName);	// Run the the program
 					// stored in the file "executable"
 
     void SaveState();			// Save/restore address space-specific
     void RestoreState();		// info on a context switch 
+
+    int id;
 
   private:
     TranslationEntry *pageTable;	// Assume linear page table translation
@@ -41,6 +42,8 @@ class AddrSpace {
 
     bool Load(char *fileName);		// Load the program into memory
 					// return false if not found
+
+    void loadPage(OpenFile *executable, NoffHeader noffH);
 
     void InitRegisters();		// Initialize user-level CPU registers,
 					// before jumping to user code

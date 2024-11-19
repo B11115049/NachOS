@@ -100,7 +100,8 @@ UserProgKernel::Run()
 	for (int n=1;n<=execfileNum;n++)
 		{
 		t[n] = new Thread(execfile[n]);
-		t[n]->space = new AddrSpace();
+		t[n]->space = new AddrSpace(n);
+		cout<<"kernel id : "<<t[n]->space->id<<endl;
 		t[n]->Fork((VoidFunctionPtr) &ForkExecute, (void *)t[n]);
 		cout << "Thread " << execfile[n] << " is executing." << endl;
 		}

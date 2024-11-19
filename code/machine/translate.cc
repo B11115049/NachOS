@@ -272,25 +272,41 @@ int Machine::getReplaceEntry() {
 	
 }
 
+void showPageTable(){
+	cout<<"pageTable : "<<kernel->machine->pageTable<<endl;
+	cout<<"id    physic    virtual    valid"<<endl;
+	for(int i = 0; i< kernel->machine->pageTableSize; i++){
+		cout<< kernel->machine->pageTable[i].id<<"        "<<kernel->machine->pageTable[i].physicalPage<<"        "<<kernel->machine->pageTable[i].virtualPage<<"       "<<kernel->machine->pageTable[i].valid<<endl;
+	}
+	cout<<"validPageTable"<<endl;
+	cout<<"id    physic    virtual    valid"<<endl;
+	for(int i = 0; i< NumPhysPages; i++){
+		cout<< kernel->machine->validPageTable[i]->id<<"        "<<kernel->machine->validPageTable[i]->physicalPage<<"        "<<kernel->machine->validPageTable[i]->virtualPage<<"        "<<kernel->machine->validPageTable[i]->valid<<endl;
+	}
+}
+
 TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
+	cout<<"before replace"<<endl;
+	showPageTable();
 	int replaceIndex = getReplaceEntry();
 	cout<< "page "<<replaceIndex<<" swapped"<<endl;
-	char buf1[PageSize] = {0};
-	if(validPageTable[replaceIndex] == nullptr) {
-		kernel->vmDisk->ReadSector(pageTable[vpn].physicalPage, buf1);
-		bcopy(buf1, &mainMemory[replaceIndex * PageSize], PageSize);
-		pageTable[vpn].physicalPage = replaceIndex;
-	} else {
-		char buf2[PageSize] = {0};
-		bcopy(&mainMemory[replaceIndex * PageSize], buf1, PageSize);
-		kernel->vmDisk->ReadSector(pageTable[vpn].physicalPage, buf2);
-		bcopy(buf2, &mainMemory[validPageTable[replaceIndex]->physicalPage * PageSize], PageSize);
-		kernel->vmDisk->WriteSector(pageTable[vpn].physicalPage, buf1);
-		// cout<<pageTable[vpn].physicalPage<<" "<<validPageTable[replaceIndex]->physicalPage<<endl;
-		swap(pageTable[vpn].physicalPage, validPageTable[replaceIndex]->physicalPage);
-		// cout<<pageTable[vpn].physicalPage<<" "<<validPageTable[replaceIndex]->physicalPage<<endl;
-		// validPageTable[replaceIndex]->valid = false;
+	char buf[PageSize] = {0};
+
+	if(validPageTable[replaceIndex] != nullptr){ 
+		if(validPageTable[replaceIndex]->dirty){	// write page from main memory to disk
+			bcopy(&mainMemory[replaceIndex * PageSize], buf, PageSize);
+			kernel->vmDisk->WriteSector(validPageTable[replaceIndex]->virtualPage, buf);
+			validPageTable[replaceIndex]->dirty = false;
+		}
+		validPageTable[replaceIndex]->valid = false;
+		validPageTable[replaceIndex]->use = false;
 	}
+
+	// write new page into main memory
+	kernel->vmDisk->ReadSector(pageTable[vpn].virtualPage, buf);
+	bcopy(buf, &mainMemory[replaceIndex * PageSize], PageSize);
+	pageTable[vpn].physicalPage = replaceIndex;
+	pageTable[vpn].valid = true;
 
 	// replace entry be choose by replaceIndex in tlb
 	if(tlb != nullptr){
@@ -301,7 +317,10 @@ TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
 			}
 		}
 	}
+
 	validPageTable[replaceIndex] = &pageTable[vpn];
-	// pageTable[vpn].valid = true;
+
+	cout<<"after replace"<<endl;
+	showPageTable();
 	return &pageTable[vpn];
 }

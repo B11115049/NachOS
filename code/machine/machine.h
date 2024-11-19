@@ -31,6 +31,7 @@ const unsigned int PageSize = 128; 		// set the page size equal to
 					// the disk sector size, for simplicity
 
 const unsigned int NumPhysPages = 32;
+const unsigned int NumVirPages = NumPhysPages * 10;
 const int MemorySize = (NumPhysPages * PageSize);
 const int TLBSize = 4;			// if there is a TLB, make it small
 
@@ -137,7 +138,10 @@ class Machine {
     TranslationEntry *pageTable;
 	TranslationEntry *validPageTable[NumPhysPages] = {0};
     unsigned int pageTableSize;	
-	bool usedPhyPage[NumPhysPages] = {0};
+	int validPageIndex = 0;
+
+
+	bool useVirPage[NumVirPages] = {0};
 
 	ReplacementType replacementType = fifo;
 
