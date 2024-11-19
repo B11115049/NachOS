@@ -43,7 +43,7 @@ class AddrSpace {
     bool Load(char *fileName);		// Load the program into memory
 					// return false if not found
 
-    void loadPage(OpenFile *executable, NoffHeader noffH);
+    void loadPage(OpenFile *executable, NoffHeader noffH, TranslationEntry* npt);
 
     void InitRegisters();		// Initialize user-level CPU registers,
 					// before jumping to user code

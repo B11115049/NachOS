@@ -286,8 +286,6 @@ void showPageTable(){
 }
 
 TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
-	cout<<"before replace"<<endl;
-	showPageTable();
 	int replaceIndex = getReplaceEntry();
 	cout<< "page "<<replaceIndex<<" swapped"<<endl;
 	char buf[PageSize] = {0};
@@ -320,7 +318,5 @@ TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
 
 	validPageTable[replaceIndex] = &pageTable[vpn];
 
-	cout<<"after replace"<<endl;
-	showPageTable();
 	return &pageTable[vpn];
 }

@@ -1,20 +1,44 @@
+Time: 10, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
 Total threads number is 4
-id: 1
+id: 1 addr: 0x5ff236a0
 kernel id : 1
+Time: 20, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
 Thread ./test/test1 is executing.
-id: 2
+id: 2 addr: 0x5ff278c0
 kernel id : 2
+Time: 30, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
 Thread ./test/test1 is executing.
-id: 3
+id: 3 addr: 0x5ff2bae0
 kernel id : 3
+Time: 40, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
 Thread ./test/test1 is executing.
-id: 4
+id: 4 addr: 0x5ff2fd00
 kernel id : 4
+Time: 50, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
 Thread ./test/test1 is executing.
+Time: 60, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
 LOAD: 1
 number of pages of ./test/test1 is 11
 before load :
-thread id: 1 pageTable: 0x645666a4
+thread id: 1 pageTable: 0x5ff33d30
 id: 1 physic: 0 virtual: 0 valid: 1
 id: 1 physic: 1 virtual: 1 valid: 1
 id: 1 physic: 2 virtual: 2 valid: 1
@@ -26,10 +50,10 @@ id: 1 physic: 7 virtual: 7 valid: 1
 id: 1 physic: 8 virtual: 8 valid: 1
 id: 1 physic: 9 virtual: 9 valid: 1
 id: 1 physic: 10 virtual: 10 valid: 1
-load page: 0x645666a4 1
-end load page: 0x645666a4 1
+load page: 0x5ff33d30 1
+end load page: 0x5ff33d30 1
 after load :
-thread id: 1 pageTable: 0x645666a4
+thread id: 1 pageTable: 0x5ff33d30
 id: 1 physic: 0 virtual: 0 valid: 1
 id: 1 physic: 1 virtual: 1 valid: 1
 id: 1 physic: 2 virtual: 2 valid: 1
@@ -42,10 +66,217 @@ id: 1 physic: 8 virtual: 8 valid: 1
 id: 1 physic: 9 virtual: 9 valid: 1
 id: 1 physic: 10 virtual: 10 valid: 1
 END LOAD: 1
+thread load complete : 1
+restore id: 1 pagetable: 0x5ff33d30 addr: 0x5ff236a0====================================================
+Starting program in thread: ./test/test1, at time: 60
+At PC = 0	JAL 56
+Time: 61, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 4	SLL r0,r0,0
+Time: 62, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 224	ADDIU r29,r29,-32
+Time: 63, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 228	SW r31,28(r29)
+Time: 64, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 232	SW r30,24(r29)
+Time: 65, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 236	JAL 52
+Time: 66, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 240	ADDU r30,r29,r0
+Time: 67, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 208	JR r0,r31
+Time: 68, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 212	SLL r0,r0,0
+Time: 69, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 244	ADDIU r2,r0,9
+Time: 70, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 248	SW r2,16(r30)
+Time: 71, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 72, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 73, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 74, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 75, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 76, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 77, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 78, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 288	J 63
+Time: 79, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 80, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 81, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 82, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 83, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 84, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 85, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 86, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 87, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 288	J 63
+Time: 88, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 89, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 90, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 91, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 92, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 93, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 94, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 95, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 96, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 288	J 63
+Time: 97, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 98, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 99, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 100
+End of pending interrupts
+Time: 110, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
 LOAD: 2
 number of pages of ./test/test1 is 11
 before load :
-thread id: 2 pageTable: 0x6456a8c4
+thread id: 2 pageTable: 0x5ff33e00
 id: 2 physic: 11 virtual: 11 valid: 1
 id: 2 physic: 12 virtual: 12 valid: 1
 id: 2 physic: 13 virtual: 13 valid: 1
@@ -57,10 +288,10 @@ id: 2 physic: 18 virtual: 18 valid: 1
 id: 2 physic: 19 virtual: 19 valid: 1
 id: 2 physic: 20 virtual: 20 valid: 1
 id: 2 physic: 21 virtual: 21 valid: 1
-load page: 0x6456a8c4 2
-end load page: 0x6456a8c4 2
+load page: 0x5ff33e00 2
+end load page: 0x5ff33e00 2
 after load :
-thread id: 2 pageTable: 0x6456a8c4
+thread id: 2 pageTable: 0x5ff33e00
 id: 2 physic: 11 virtual: 11 valid: 1
 id: 2 physic: 12 virtual: 12 valid: 1
 id: 2 physic: 13 virtual: 13 valid: 1
@@ -73,10 +304,467 @@ id: 2 physic: 19 virtual: 19 valid: 1
 id: 2 physic: 20 virtual: 20 valid: 1
 id: 2 physic: 21 virtual: 21 valid: 1
 END LOAD: 2
+thread load complete : 2
+restore id: 2 pagetable: 0x5ff33e00 addr: 0x5ff278c0====================================================
+Starting program in thread: ./test/test1, at time: 110
+At PC = 0	JAL 56
+Time: 111, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 4	SLL r0,r0,0
+Time: 112, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 224	ADDIU r29,r29,-32
+Time: 113, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 228	SW r31,28(r29)
+Time: 114, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 232	SW r30,24(r29)
+Time: 115, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 236	JAL 52
+Time: 116, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 240	ADDU r30,r29,r0
+Time: 117, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 208	JR r0,r31
+Time: 118, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 212	SLL r0,r0,0
+Time: 119, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 244	ADDIU r2,r0,9
+Time: 120, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 248	SW r2,16(r30)
+Time: 121, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 122, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 123, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 124, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 125, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 126, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 127, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 128, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 288	J 63
+Time: 129, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 130, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 131, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 132, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 133, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 134, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 135, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 136, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 137, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 288	J 63
+Time: 138, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 139, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 140, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 141, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 142, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 143, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 144, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 145, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 146, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 288	J 63
+Time: 147, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 148, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 149, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 150, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 151, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 152, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 153, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 154, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 155, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 288	J 63
+Time: 156, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 157, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 158, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 159, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 160, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 161, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 162, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 163, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 164, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 288	J 63
+Time: 165, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 166, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 167, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 168, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 169, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 170, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 171, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 172, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 173, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 288	J 63
+Time: 174, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 175, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 176, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 177, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 178, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 179, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 180, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 181, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 182, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 288	J 63
+Time: 183, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 184, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 185, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 186, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 187, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 188, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 189, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 190, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 191, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 288	J 63
+Time: 192, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 193, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 194, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 195, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 196, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 197, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 198, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 199, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 200
+End of pending interrupts
+Time: 210, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300
+End of pending interrupts
 LOAD: 3
 number of pages of ./test/test1 is 11
 before load :
-thread id: 3 pageTable: 0x6456eae4
+thread id: 3 pageTable: 0x5ff33ed0
 id: 3 physic: 22 virtual: 22 valid: 1
 id: 3 physic: 23 virtual: 23 valid: 1
 id: 3 physic: 24 virtual: 24 valid: 1
@@ -88,11 +776,21 @@ id: 3 physic: 29 virtual: 29 valid: 1
 id: 3 physic: 30 virtual: 30 valid: 1
 id: 3 physic: 31 virtual: 31 valid: 1
 id: 3 physic: 10 virtual: 32 valid: 0
-load page: 0x6456eae4 3
+load page: 0x5ff33ed0 3
+Time: 220, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300
+End of pending interrupts
+Writing sector: 32
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Time: 230, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
 LOAD: 4
 number of pages of ./test/test1 is 11
 before load :
-thread id: 4 pageTable: 0x64572d04
+thread id: 4 pageTable: 0x5ff33fc0
 id: 4 physic: 0 virtual: 33 valid: 0
 id: 4 physic: 1 virtual: 34 valid: 0
 id: 4 physic: 2 virtual: 35 valid: 0
@@ -104,12 +802,1096 @@ id: 4 physic: 7 virtual: 40 valid: 0
 id: 4 physic: 8 virtual: 41 valid: 0
 id: 4 physic: 9 virtual: 42 valid: 0
 id: 4 physic: 10 virtual: 43 valid: 0
-load page: 0x64572d04 4
+load page: 0x5ff33fc0 4
+restore id: 1 pagetable: 0x5ff33d30 addr: 0x5ff236a0====================================================
+Time: 240, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 241, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 242, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 243, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 244, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 245, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 288	J 63
+Time: 246, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 247, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 248, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 249, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 250, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 251, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 252, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 253, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 254, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 288	J 63
+Time: 255, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 256, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 257, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 258, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 259, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 260, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 261, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 262, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 263, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 288	J 63
+Time: 264, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 265, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 266, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 267, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 268, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 269, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 270, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 271, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 272, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 288	J 63
+Time: 273, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 274, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 275, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 276, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 277, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 278, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 279, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 280, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 281, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 288	J 63
+Time: 282, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 283, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 284, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 285, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 286, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 287, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 288, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 289, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 290, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 288	J 63
+Time: 291, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 292, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 293, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 294, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 295, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 296, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 268	J 74
+Time: 297, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 272	SLL r0,r0,0
+Time: 298, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 296	ADDU r29,r30,r0
+Time: 299, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 300	LW r31,28(r29)
+Time: 300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+restore id: 2 pagetable: 0x5ff33e00 addr: 0x5ff278c0====================================================
+Time: 310, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 288	J 63
+Time: 311, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 312, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 313, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 314, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 315, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 316, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 268	J 74
+Time: 317, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 272	SLL r0,r0,0
+Time: 318, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 296	ADDU r29,r30,r0
+Time: 319, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 300	LW r31,28(r29)
+Time: 320, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 304	LW r30,24(r29)
+Time: 321, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 308	JR r0,r31
+Time: 322, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 312	ADDIU r29,r29,32
+Time: 323, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 8	JAL 8
+Time: 324, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 12	ADDU r4,r0,r0
+Time: 325, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 32	ADDIU r2,r0,1
+Time: 326, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 36	SYSCALL
 return value:0
+restore id: 1 pagetable: 0x5ff33d30 addr: 0x5ff236a0====================================================
+Time: 336, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 304	LW r30,24(r29)
+Time: 337, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 308	JR r0,r31
+Time: 338, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 312	ADDIU r29,r29,32
+Time: 339, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 8	JAL 8
+Time: 340, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 12	ADDU r4,r0,r0
+Time: 341, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 32	ADDIU r2,r0,1
+Time: 342, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+At PC = 36	SYSCALL
 return value:0
-end load page: 0x6456eae4 3
+Time: 342, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 1000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 1000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 1100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 1100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 1200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 1200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 1300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 1300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 1400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 1400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 1500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 1500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 1600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 1600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 1700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 1700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 1800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 1800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 1900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 1900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 2000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 2000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 2100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 2100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 2200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 2200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 2300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 2300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 2400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 2400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 2500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 2500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 2600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 2600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 2700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 2700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 2800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 2800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 2900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 2900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 3000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 3000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 3100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 3100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 3200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 3200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 3300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 3300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 3400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 3400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 3500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 3500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 3600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 3600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 3700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 3700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 3800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 3800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 3900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 3900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 4000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 4000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 4100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 4100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 4200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 4200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 4300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 4300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 4400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 4400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 4500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 4500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 4600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 4600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 4700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 4700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 4800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 4800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 4900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 4900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 5000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 5000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 5100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 5100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 5200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 5200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 5300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 5300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 5400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 5400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 5500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 5500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 5600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 5600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 5700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 5700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 5800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 5800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 5900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 5900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 6000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 6000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 6100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 6100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 6200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 6200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 6300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 6300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 6400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 6400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 6500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 6500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 6600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 6600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 6700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 6700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 6800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 6800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 6900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 6900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 7000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 7000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 7100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 7100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 7200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 7200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 7300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 7300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 7400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 7400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 7500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 7500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 7600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 7600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 7700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 7700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 7800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 7800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 7900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 7900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 8000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 8000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 8100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 8100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 8200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 8200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 8300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 8300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 8400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 8400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 8500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 8500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 8600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 8600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 8700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 8700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 8800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 8800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 8900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 8900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 9000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 9000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 9100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 9100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 9200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 9200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 9300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 9300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 9400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 9400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 9500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 9500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 9600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 9600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 9700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 9700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 9800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 9800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 9900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 9900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 10000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 10000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 10100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 10100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 10200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 10200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 10300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 10300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 10400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 10400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 10500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 10500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 10600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 10600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 10700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 10700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 10800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 10800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 10900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 10900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 11000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 11000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 11100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 11100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 11200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 11200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 11300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 11300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 11400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 11400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 11500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 11500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 11600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 11600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 11700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 11700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 11800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 11800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 11900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 11900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 12000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 12000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 12100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 12100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 12200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 12200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 12300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 12300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 12400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 12400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 12500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 12500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 12600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 12600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 12700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 12700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 12800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 12800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 12900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 12900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 13000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 13000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 13100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 13100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 13200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 13200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 13300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 13300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 13400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 13400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 13500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 13500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 13600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 13600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 13700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 13700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 13800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 13800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 13900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 13900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 14000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 14000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 14100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 14100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 14200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 14200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 14300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 14300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 14400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 14400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 14500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 14500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 14600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 14600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 14700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 14700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 14800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 14800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 14900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 14900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 15000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 15000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 15100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 15100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 15200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 15200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 15300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 15300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 15400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 15400, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 15500Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 15500, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 15600Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 15600, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 15700Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 15700, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 15800Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 15800, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 15900Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 15900, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 16000Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 16000, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 16100Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 16100, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 16200Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 16200, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 16300Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 16300, interrupts off
+Pending interrupts:
+Interrupt handler timer, scheduled at 16400Interrupt handler disk, scheduled at 16500
+End of pending interrupts
+Time: 16400, interrupts off
+Pending interrupts:
+Interrupt handler disk, scheduled at 16500Interrupt handler timer, scheduled at 16500
+End of pending interrupts
+restore id: 3 pagetable: 0x5ff33e00 addr: 0x5ff2bae0====================================================
+Time: 16510, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+Time: 16520, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+end load page: 0x5ff33e00 3
 after load :
-thread id: 3 pageTable: 0x6456eae4
+thread id: 3 pageTable: 0x5ff33e00
 id: 2 physic: 11 virtual: 11 valid: 1
 id: 2 physic: 12 virtual: 12 valid: 1
 id: 2 physic: 13 virtual: 13 valid: 1
@@ -120,111 +1902,567 @@ id: 2 physic: 17 virtual: 17 valid: 1
 id: 2 physic: 18 virtual: 18 valid: 1
 id: 2 physic: 19 virtual: 19 valid: 1
 id: 2 physic: 20 virtual: 20 valid: 1
-id: 3 physic: 10 virtual: 32 valid: 0
+id: 2 physic: 21 virtual: 21 valid: 1
 END LOAD: 3
-page fault
-before replace
-pageTable : 0x64576e00
-id    physic    virtual    valid
-2    11    11    1
-2    12    12    1
-2    13    13    1
-2    14    14    1
-2    15    15    1
-2    16    16    1
-2    17    17    1
-2    18    18    1
-2    19    19    1
-2    20    20    1
-3    10    32    0
-validPageTable
-id    physic    virtual    valid
-1    0    0    1
-1    1    1    1
-1    2    2    1
-1    3    3    1
-1    4    4    1
-1    5    5    1
-1    6    6    1
-1    7    7    1
-1    8    8    1
-1    9    9    1
-1    10    10    1
-2    11    11    1
-2    12    12    1
-2    13    13    1
-2    14    14    1
-2    15    15    1
-2    16    16    1
-2    17    17    1
-2    18    18    1
-2    19    19    1
-2    20    20    1
-3    10    32    0
-3    22    22    1
-3    23    23    1
-3    24    24    1
-3    25    25    1
-3    26    26    1
-3    27    27    1
-3    28    28    1
-3    29    29    1
-3    30    30    1
-3    31    31    1
-page 0 swapped
-after replace
-pageTable : 0x64576e00
-id    physic    virtual    valid
-2    11    11    1
-2    12    12    1
-2    13    13    1
-2    14    14    1
-2    15    15    1
-2    16    16    1
-2    17    17    1
-2    18    18    1
-2    19    19    1
-2    20    20    1
-3    0    32    1
-validPageTable
-id    physic    virtual    valid
-3    0    32    1
-1    1    1    1
-1    2    2    1
-1    3    3    1
-1    4    4    1
-1    5    5    1
-1    6    6    1
-1    7    7    1
-1    8    8    1
-1    9    9    1
-1    10    10    1
-2    11    11    1
-2    12    12    1
-2    13    13    1
-2    14    14    1
-2    15    15    1
-2    16    16    1
-2    17    17    1
-2    18    18    1
-2    19    19    1
-2    20    20    1
-3    0    32    1
-3    22    22    1
-3    23    23    1
-3    24    24    1
-3    25    25    1
-3    26    26    1
-3    27    27    1
-3    28    28    1
-3    29    29    1
-3    30    30    1
-3    31    31    1
+thread load complete : 3
+restore id: 3 pagetable: 0x5ff33e00 addr: 0x5ff2bae0====================================================
+Starting program in thread: ./test/test1, at time: 16520
+At PC = 0	JAL 56
+Time: 16521, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 4	SLL r0,r0,0
+Time: 16522, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 224	ADDIU r29,r29,-32
+Time: 16523, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 228	SW r31,28(r29)
+Time: 16524, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 232	SW r30,24(r29)
+Time: 16525, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 236	JAL 52
+Time: 16526, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 240	ADDU r30,r29,r0
+Time: 16527, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 208	JR r0,r31
+Time: 16528, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 212	SLL r0,r0,0
+Time: 16529, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 244	ADDIU r2,r0,9
+Time: 16530, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 248	SW r2,16(r30)
+Time: 16531, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 16532, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 16533, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 16534, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 16535, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 16536, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 16537, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 16538, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 16539, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 16540, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 16541, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 16542, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 16543, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 16544, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 16545, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 16546, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 16547, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 16548, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 16549, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 16550, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 16551, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 16552, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 16553, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 16554, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 16555, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 16556, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 16557, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 16558, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 16559, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 16560, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 16561, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 16562, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 16563, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 16564, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 16565, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 16566, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 16567, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 16568, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 16569, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 16570, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 16571, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 16572, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 16573, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 16574, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 16575, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 16576, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 16577, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 16578, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 16579, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 16580, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 16581, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 16582, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 16583, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 16584, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 16585, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 16586, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 16587, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 16588, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 16589, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 16590, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 16591, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 16592, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 16593, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 16594, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 16595, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 16596, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 16597, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 16598, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 16599, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 16600, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 16601, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 16602, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 16603, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 16604, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 16605, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 16606, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 16607, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 16608, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 16609, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 16610, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 16611, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 16612, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 16613, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 16614, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 16615, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 16616, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 268	J 74
+Time: 16617, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 272	SLL r0,r0,0
+Time: 16618, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 296	ADDU r29,r30,r0
+Time: 16619, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 300	LW r31,28(r29)
+Time: 16620, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 304	LW r30,24(r29)
+Time: 16621, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 308	JR r0,r31
+Time: 16622, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 312	ADDIU r29,r29,32
+Time: 16623, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 8	JAL 8
+Time: 16624, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 12	ADDU r4,r0,r0
+Time: 16625, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 32	ADDIU r2,r0,1
+Time: 16626, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 36	SYSCALL
 return value:0
-end load page: 0x64572d04 4
+restore id: 4 pagetable: 0x5ff33e00 addr: 0x5ff2fd00====================================================
+Time: 16636, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+Writing sector: 33
+201326648 0 201326600 8225 604110848 12 65011720 0 604110849 12 65011720 0 604110850 12 65011720 0 604110851 12 65011720 0 604110852 12 65011720 0 604110853 12 65011720 0 604110854 12 65011720 0 
+Time: 16636, interrupts off
+Pending interrupts:
+Interrupt handler disk, scheduled at 33000
+End of pending interrupts
+restore id: 4 pagetable: 0x5ff33e00 addr: 0x5ff2fd00====================================================
+Time: 33010, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+Time: 33020, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+end load page: 0x5ff33e00 4
 after load :
-thread id: 4 pageTable: 0x64572d04
-id: 4 physic: 0 virtual: 33 valid: 0
+thread id: 4 pageTable: 0x5ff33e00
+id: 2 physic: 11 virtual: 11 valid: 1
 id: 2 physic: 12 virtual: 12 valid: 1
 id: 2 physic: 13 virtual: 13 valid: 1
 id: 2 physic: 14 virtual: 14 valid: 1
@@ -234,113 +2472,553 @@ id: 2 physic: 17 virtual: 17 valid: 1
 id: 2 physic: 18 virtual: 18 valid: 1
 id: 2 physic: 19 virtual: 19 valid: 1
 id: 2 physic: 20 virtual: 20 valid: 1
-id: 3 physic: 0 virtual: 32 valid: 1
+id: 2 physic: 21 virtual: 21 valid: 1
 END LOAD: 4
-page fault
-before replace
-pageTable : 0x64576e00
-id    physic    virtual    valid
-4    0    33    0
-2    12    12    1
-2    13    13    1
-2    14    14    1
-2    15    15    1
-2    16    16    1
-2    17    17    1
-2    18    18    1
-2    19    19    1
-2    20    20    1
-3    0    32    1
-validPageTable
-id    physic    virtual    valid
-3    0    32    1
-1    1    1    1
-1    2    2    1
-1    3    3    1
-1    4    4    1
-1    5    5    1
-1    6    6    1
-1    7    7    1
-1    8    8    1
-1    9    9    1
-1    10    10    1
-4    0    33    0
-2    12    12    1
-2    13    13    1
-2    14    14    1
-2    15    15    1
-2    16    16    1
-2    17    17    1
-2    18    18    1
-2    19    19    1
-2    20    20    1
-3    0    32    1
-3    22    22    1
-3    23    23    1
-3    24    24    1
-3    25    25    1
-3    26    26    1
-3    27    27    1
-3    28    28    1
-3    29    29    1
-3    30    30    1
-3    31    31    1
-page 1 swapped
-after replace
-pageTable : 0x64576e00
-id    physic    virtual    valid
-4    1    33    1
-2    12    12    1
-2    13    13    1
-2    14    14    1
-2    15    15    1
-2    16    16    1
-2    17    17    1
-2    18    18    1
-2    19    19    1
-2    20    20    1
-3    0    32    1
-validPageTable
-id    physic    virtual    valid
-3    0    32    1
-4    1    33    1
-1    2    2    1
-1    3    3    1
-1    4    4    1
-1    5    5    1
-1    6    6    1
-1    7    7    1
-1    8    8    1
-1    9    9    1
-1    10    10    1
-4    1    33    1
-2    12    12    1
-2    13    13    1
-2    14    14    1
-2    15    15    1
-2    16    16    1
-2    17    17    1
-2    18    18    1
-2    19    19    1
-2    20    20    1
-3    0    32    1
-3    22    22    1
-3    23    23    1
-3    24    24    1
-3    25    25    1
-3    26    26    1
-3    27    27    1
-3    28    28    1
-3    29    29    1
-3    30    30    1
-3    31    31    1
+thread load complete : 4
+restore id: 4 pagetable: 0x5ff33e00 addr: 0x5ff2fd00====================================================
+Starting program in thread: ./test/test1, at time: 33020
+At PC = 0	JAL 56
+Time: 33021, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 4	SLL r0,r0,0
+Time: 33022, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 224	ADDIU r29,r29,-32
+Time: 33023, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 228	SW r31,28(r29)
+Time: 33024, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 232	SW r30,24(r29)
+Time: 33025, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 236	JAL 52
+Time: 33026, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 240	ADDU r30,r29,r0
+Time: 33027, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 208	JR r0,r31
+Time: 33028, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 212	SLL r0,r0,0
+Time: 33029, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 244	ADDIU r2,r0,9
+Time: 33030, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 248	SW r2,16(r30)
+Time: 33031, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 33032, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 33033, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 33034, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 33035, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 33036, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 33037, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 33038, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 33039, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 33040, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 33041, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 33042, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 33043, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 33044, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 33045, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 33046, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 33047, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 33048, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 33049, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 33050, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 33051, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 33052, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 33053, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 33054, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 33055, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 33056, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 33057, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 33058, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 33059, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 33060, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 33061, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 33062, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 33063, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 33064, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 33065, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 33066, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 33067, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 33068, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 33069, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 33070, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 33071, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 33072, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 33073, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 33074, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 33075, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 33076, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 33077, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 33078, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 33079, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 33080, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 33081, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 33082, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 33083, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 33084, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 33085, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 33086, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 33087, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 33088, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 33089, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 33090, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 33091, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 33092, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 33093, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 33094, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 33095, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 33096, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 33097, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 33098, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 33099, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 33100, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 33101, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 33102, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 33103, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 33104, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 33105, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 33106, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 33107, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 276	LW r2,16(r30)
+Time: 33108, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 280	SLL r0,r0,0
+Time: 33109, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 284	ADDIU r3,r2,-1
+Time: 33110, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 288	J 63
+Time: 33111, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 292	SW r3,16(r30)
+Time: 33112, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 252	LW r2,16(r30)
+Time: 33113, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 256	SLL r0,r0,0
+Time: 33114, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 260	BGTZ r2,3
+Time: 33115, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 264	SLL r0,r0,0
+Time: 33116, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 268	J 74
+Time: 33117, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 272	SLL r0,r0,0
+Time: 33118, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 296	ADDU r29,r30,r0
+Time: 33119, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 300	LW r31,28(r29)
+Time: 33120, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 304	LW r30,24(r29)
+Time: 33121, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 308	JR r0,r31
+Time: 33122, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 312	ADDIU r29,r29,32
+Time: 33123, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 8	JAL 8
+Time: 33124, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 12	ADDU r4,r0,r0
+Time: 33125, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 32	ADDIU r2,r0,1
+Time: 33126, interrupts off
+Pending interrupts:
+
+End of pending interrupts
+At PC = 36	SYSCALL
 return value:0
+Time: 33126, interrupts off
+Pending interrupts:
+
+End of pending interrupts
 No threads ready or runnable, and no pending interrupts.
 Assuming the program completed.
 Machine halting!
 
-Ticks: total 98080, idle 95493, system 2370, user 217
-Disk I/O: reads 2, writes 4
+Ticks: total 33126, idle 32522, system 180, user 424
+Disk I/O: reads 0, writes 2
 Console I/O: reads 0, writes 0
-Paging: faults 2
+Paging: faults 0
 Network I/O: packets received 0, sent 0
