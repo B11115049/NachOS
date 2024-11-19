@@ -16,6 +16,12 @@
 #include "filesys.h"
 #include "machine.h"
 #include "synchdisk.h"
+
+enum ReplacementType {
+	fifo,
+	LRU
+};
+
 class SynchDisk;
 class UserProgKernel : public ThreadedKernel {
   public:
@@ -33,6 +39,10 @@ class UserProgKernel : public ThreadedKernel {
     Machine *machine;
     FileSystem *fileSystem;
     SynchDisk *vmDisk;
+
+
+	  ReplacementType replacementType = fifo;
+
 #ifdef FILESYS
     SynchDisk *synchDisk;
 #endif // FILESYS
