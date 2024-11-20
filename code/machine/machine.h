@@ -134,8 +134,6 @@ class Machine {
     TranslationEntry *pageTable;
 	TranslationEntry *validPageTable[NumPhysPages] = {0};
     unsigned int pageTableSize;	
-	int validPageIndex = 0;
-
 
 	bool useVirPage[NumVirPages] = {0};
 
@@ -169,7 +167,7 @@ class Machine {
     void Debugger();		// invoke the user program debugger
     void DumpState();		// print the user CPU and memory state 
 
-	int getReplaceEntry();
+	int getReplaceEntryIndex();
 	TranslationEntry* getEntryWithReplacement(unsigned int vpn);
 
 
@@ -182,7 +180,7 @@ class Machine {
     int runUntilTime;		// drop back into the debugger when simulated
 				// time reaches this value
 
-	int entryIndex = 0;
+	int entryIndex = 0; // state var will be effected by getReplaceEntryIndex func
 
  friend class Interrupt;		// calls DelayedLoad()    
 };

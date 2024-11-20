@@ -31,6 +31,7 @@
 
 #include "copyright.h"
 #include "main.h"
+#include <iomanip>
 
 // Routines for converting Words and Short Words to and from the
 // simulated machine's format of little endian.  These end up
@@ -251,8 +252,7 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
     return NoException;
 }
 
-
-int Machine::getReplaceEntry() {
+int Machine::getReplaceEntryIndex() {
 	int j = entryIndex;
 	do{
 		if(validPageTable[j] == nullptr){
@@ -262,31 +262,19 @@ int Machine::getReplaceEntry() {
 	}while(j = (j + 1) % NumPhysPages, j != entryIndex);
 	
 	if (kernel->replacementType == fifo) {
-		entryIndex = (entryIndex + 1) % NumPhysPages;
-		return j;
-	} else if (kernel->replacementType == LRU) {
+		// easly use j as replace index
+	} else if (kernel->replacementType == LRU) { 
+		// Second-Chance (clock) Page-Replacement Algorithm
+		// if entry is use, set it to unUse then check next until find unUse
 		for(; validPageTable[j]->use; validPageTable[j]->use = false, j = (j + 1) % NumPhysPages);
-		entryIndex = (j + 1) % NumPhysPages;
-		return j;
 	}
-	
-}
 
-void showPageTable(){
-	cout<<"pageTable : "<<kernel->machine->pageTable<<endl;
-	cout<<"id    physic    virtual    valid"<<endl;
-	for(int i = 0; i< kernel->machine->pageTableSize; i++){
-		cout<< kernel->machine->pageTable[i].id<<"        "<<kernel->machine->pageTable[i].physicalPage<<"        "<<kernel->machine->pageTable[i].virtualPage<<"       "<<kernel->machine->pageTable[i].valid<<endl;
-	}
-	cout<<"validPageTable"<<endl;
-	cout<<"id    physic    virtual    valid"<<endl;
-	for(int i = 0; i< NumPhysPages; i++){
-		cout<< kernel->machine->validPageTable[i]->id<<"        "<<kernel->machine->validPageTable[i]->physicalPage<<"        "<<kernel->machine->validPageTable[i]->virtualPage<<"        "<<kernel->machine->validPageTable[i]->valid<<endl;
-	}
+	entryIndex = (j + 1) % NumPhysPages;
+	return j;
 }
 
 TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
-	int replaceIndex = getReplaceEntry();
+	int replaceIndex = getReplaceEntryIndex();
 	cout<< "page "<<replaceIndex<<" swapped"<<endl;
 	char buf[PageSize] = {0};
 
