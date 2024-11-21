@@ -111,11 +111,11 @@ AddrSpace::Load(char *fileName)
 	cout << "number of pages of " << fileName<< " is "<<numPages<<endl;
     size = numPages * PageSize;
 
-    pageTable = new TranslationEntry[numPages];
+    pageTable = new TranslationEntry[numPages]; // init pagetable
 
-    TranslationEntry* npt = pageTable;
+    TranslationEntry* npt = pageTable; // temporary page table
 
-    for(unsigned int i = 0; i < numPages; i++) {
+    for(unsigned int i = 0; i < numPages; i++) { // init all page
         pageTable[i].virtualPage = i;
         pageTable[i].physicalPage = i;
         pageTable[i].valid = false;
@@ -129,7 +129,7 @@ AddrSpace::Load(char *fileName)
 // then, copy in the code and data segments into memory
 
 	if (noffH.code.size > 0) {
-		for(unsigned int j=0,i=0;i < numPages ;i++) {
+		for(unsigned int j=0,i=0;i < numPages ;i++) { //Allocate virtual page and physical page
             // assign disk space
 			j = 0;
             while(j < NumVirPages && kernel->machine->useVirPage[j]){ j++; }
@@ -148,9 +148,10 @@ AddrSpace::Load(char *fileName)
 		}
     }
 
-    loadPage(executable, noffH, npt);
+    loadPage(executable, noffH, npt);//Load page data form executable fiel to memory or
+                                        // virtual disk
 
-    pageTable = npt;
+    pageTable = npt; // Load back temporary 
 
 
 
@@ -255,7 +256,16 @@ void AddrSpace::RestoreState()
     kernel->machine->pageTable = pageTable;
     kernel->machine->pageTableSize = numPages;
 }
-
+//----------------------------------------------------------------------
+// AddrSpace::loadPage
+// Load page data from executable file to memory or virutal disk Traverse all Pages 
+//  and check whether the entry is valid
+// Valid:Indicates that the page has been maaped to physical memory ,
+//  so data can be loaded directly into memory.
+// Invalid:Indicates that the page has not been mapped to physical memory and
+//  may need to wait for scheduling or paging mechanism processing.
+//  First , write the data to the vmDisk temporary storage.
+//----------------------------------------------------------------------
 void AddrSpace::loadPage(OpenFile *executable, NoffHeader noffH, TranslationEntry* npt){
     for(int i = 0; i < numPages; i++) {
         if(npt[i].valid) {

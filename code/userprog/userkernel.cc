@@ -42,7 +42,7 @@ UserProgKernel::UserProgKernel(int argc, char **argv)
 			cout << "For example:" << endl;
 			cout << "	./nachos -s : Print machine status during the machine is on." << endl;
 			cout << "	./nachos -e file1 -e file2 : executing file1 and file2."  << endl;
-		}
+		}//Add replacement tpye FIFO/LRU to replacement page alogorithm tpye
 		else if (strcmp(argv[i], "-FIFO") == 0) {
 			replacementType = fifo;
 		}
@@ -65,7 +65,7 @@ UserProgKernel::Initialize()
     machine = new Machine(debugUserProg);
     fileSystem = new FileSystem();
 
-	vmDisk = new SynchDisk("vm");
+	vmDisk = new SynchDisk("vm"); // Initialize vmDisk
 #ifdef FILESYS
     synchDisk = new SynchDisk("New SynchDisk");
 #endif // FILESYS

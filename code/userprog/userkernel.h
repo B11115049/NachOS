@@ -16,7 +16,7 @@
 #include "filesys.h"
 #include "machine.h"
 #include "synchdisk.h"
-
+//ReplacementType represents the replacement page alogorithm tpye
 enum ReplacementType {
 	fifo,
 	LRU
@@ -38,10 +38,10 @@ class UserProgKernel : public ThreadedKernel {
 // These are public for notational convenience.
     Machine *machine;
     FileSystem *fileSystem;
-    SynchDisk *vmDisk;
+    SynchDisk *vmDisk; //Declare Virtual Disk to be used as swap space when main memory is insufficient
 
 
-	  ReplacementType replacementType = fifo;
+	  ReplacementType replacementType = fifo;//Initialize replaement type to fifo
 
 #ifdef FILESYS
     SynchDisk *synchDisk;

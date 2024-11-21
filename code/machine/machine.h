@@ -31,7 +31,7 @@ const unsigned int PageSize = 128; 		// set the page size equal to
 					// the disk sector size, for simplicity
 
 const unsigned int NumPhysPages = 32;
-const unsigned int NumVirPages = NumPhysPages * 10;
+const unsigned int NumVirPages = NumPhysPages * 10; // set virual pages = physical pages * 10
 const int MemorySize = (NumPhysPages * PageSize);
 const int TLBSize = 4;			// if there is a TLB, make it small
 
@@ -132,10 +132,10 @@ class Machine {
 					// "read-only" to Nachos kernel code
 
     TranslationEntry *pageTable;
-	TranslationEntry *validPageTable[NumPhysPages] = {0};
+	TranslationEntry *validPageTable[NumPhysPages] = {0}; // valid page table 
     unsigned int pageTableSize;	
 
-	bool useVirPage[NumVirPages] = {0};
+	bool useVirPage[NumVirPages] = {0}; // virual page that be used
 
     bool ReadMem(int addr, int size, int* value);
   private:
@@ -167,8 +167,8 @@ class Machine {
     void Debugger();		// invoke the user program debugger
     void DumpState();		// print the user CPU and memory state 
 
-	int getReplaceEntryIndex();
-	TranslationEntry* getEntryWithReplacement(unsigned int vpn);
+	int getReplaceEntryIndex(); // get page inedx that can be replaced 
+	TranslationEntry* getEntryWithReplacement(unsigned int vpn); // get entry that can be replaced
 
 
 // Internal data structures
