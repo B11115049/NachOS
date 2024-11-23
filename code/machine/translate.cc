@@ -211,12 +211,13 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
 	if (vpn >= pageTableSize) {
 	    DEBUG(dbgAddr, "Illegal virtual page # " << virtAddr);
 	    return AddressErrorException;
-	} else if (!pageTable[vpn].valid) {
+	} else if (!pageTable[vpn].valid) { // can't find valid page ,
+										// page fault and page that can be replaced
         cout << "page fault\n";
 		kernel->stats->numPageFaults++;
 		entry = getEntryWithReplacement(vpn);
 	}
-	entry = &pageTable[vpn];
+	entry = &pageTable[vpn];  //update entry
     } else {
         for (entry = NULL, i = 0; i < TLBSize; i++)
     	    if (tlb[i]->valid && (tlb[i] == &pageTable[vpn])) {
@@ -251,7 +252,13 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
     DEBUG(dbgAddr, "phys addr = " << *physAddr);
     return NoException;
 }
-
+//----------------------------------------------------------------------
+// Machine::getReplaceEntryIndex
+// Find the page where main memory can be replace and reutrn the index of th page
+// First , use fifo , find the free  frame to replace
+// Second , if hasn't free page frame , use fifo
+// or use LRU
+//----------------------------------------------------------------------
 int Machine::getReplaceEntryIndex() {
 	int j = entryIndex;
 	do{
@@ -272,7 +279,18 @@ int Machine::getReplaceEntryIndex() {
 	entryIndex = (j + 1) % NumPhysPages;
 	return j;
 }
-
+//----------------------------------------------------------------------
+// Machine::getEntryWithReplacement
+// Implement page replacement mechanism and return new page table
+// Get a replaceable entry(free frame,FIFO,LRU)
+// If the entry is not free: Put the mainMemory data of the entry into the disk and set
+//  valid/dirty/use to false 
+// Read the data corresponding to the virtual page number to be loaded from the disk and
+//  put it into main memory 
+// The physical page corresponding to the virtual page table is set as a replaceable entry.
+// The valid of the virtual page table is set to true , which means it is in main memory .
+// Update validPageTable to the virtual page table to be loaded
+//----------------------------------------------------------------------
 TranslationEntry* Machine::getEntryWithReplacement(unsigned int vpn){
 	int replaceIndex = getReplaceEntryIndex();
 	cout<< "page "<<replaceIndex<<" swapped"<<endl;
