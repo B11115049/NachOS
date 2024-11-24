@@ -53,7 +53,7 @@ SwapHeader (NoffHeader *noffH)
 
 
 AddrSpace::AddrSpace(int id)
-{   this->id = id;
+{
     // zero out the entire address space
 //    bzero(kernel->machine->mainMemory, MemorySize);
 }
@@ -113,8 +113,6 @@ AddrSpace::Load(char *fileName)
 
     pageTable = new TranslationEntry[numPages]; // init pagetable
 
-    TranslationEntry* npt = pageTable; // temporary page table
-
     for(unsigned int i = 0; i < numPages; i++) { // init all page
         pageTable[i].virtualPage = i;
         pageTable[i].physicalPage = i;
@@ -122,7 +120,6 @@ AddrSpace::Load(char *fileName)
         pageTable[i].use = false;
         pageTable[i].dirty = false;
         pageTable[i].readOnly = false;
-        pageTable[i].id = id;
     }
 
 //     DEBUG(dbgAddr, "Initializing address space: " << numPages << ", " << size);
@@ -148,12 +145,14 @@ AddrSpace::Load(char *fileName)
 		}
     }
 
-    loadPage(executable, noffH, npt);//Load page data form executable fiel to memory or
+    int np = numPages; // for WriteSector side effect resistence
+    TranslationEntry* npt = pageTable; // temporary page table for WriteSector side effect resistence
+
+    loadPage(executable, noffH, npt, np);//Load page data form executable file to memory or
                                         // virtual disk
 
     pageTable = npt; // Load back temporary 
-
-
+    numPages = np; // Load back numPages 
 
 	if (noffH.initData.size > 0) {
         DEBUG(dbgAddr, "Initializing data segment.");
@@ -266,8 +265,8 @@ void AddrSpace::RestoreState()
 //  may need to wait for scheduling or paging mechanism processing.
 //  First , write the data to the vmDisk temporary storage.
 //----------------------------------------------------------------------
-void AddrSpace::loadPage(OpenFile *executable, NoffHeader noffH, TranslationEntry* npt){
-    for(int i = 0; i < numPages; i++) {
+void AddrSpace::loadPage(OpenFile *executable, NoffHeader noffH, TranslationEntry* npt, int np){
+    for(int i = 0;  i < np; i++) {
         if(npt[i].valid) {
             executable->ReadAt( &(kernel->machine->mainMemory[npt[i].physicalPage * PageSize]), PageSize,
 					noffH.code.inFileAddr + (i*PageSize));

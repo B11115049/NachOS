@@ -32,8 +32,6 @@ class AddrSpace {
     void SaveState();			// Save/restore address space-specific
     void RestoreState();		// info on a context switch 
 
-    int id;
-
   private:
     TranslationEntry *pageTable;	// Assume linear page table translation
 					// for now!
@@ -43,7 +41,7 @@ class AddrSpace {
     bool Load(char *fileName);		// Load the program into memory
 					// return false if not found
 
-    void loadPage(OpenFile *executable, NoffHeader noffH, TranslationEntry* npt); // Load the page into memory
+    void loadPage(OpenFile *executable, NoffHeader noffH, TranslationEntry* npt, int np); // Load the page into memory
 
     void InitRegisters();		// Initialize user-level CPU registers,
 					// before jumping to user code
